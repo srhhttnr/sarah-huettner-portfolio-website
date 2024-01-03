@@ -1,0 +1,496 @@
+/* declarations for native color variables, font variables, etc */
+:root {
+    --primary-color: #81bd81;
+    --original-a-color: #00476a;
+    --visited-a-color: #41415f;
+    --active-a-color: #344c34; 
+    --button-color: #bd81bd;
+    --grid__item-color: #d1bca7;
+    --black: #000;
+    --white: #ffffff;
+    --sun-color: #f1c647;
+    --moon-color: #e7e7e7;
+    --daytime-color:#393536;
+    --nighttime-color: #ffffff;
+    --day-sky-color: #c3eef9;
+    --night-sky-color: #232338;
+    --spring-leaves: #b7e68e;
+    --summer-leaves: #6ca833;
+    --autumn-leaves: #c75050;
+    --winter-leaves: #ffffff;
+    --transparent-black: rgba(0, 0, 0, 0.3);
+    --font-weight-headings: 900;
+    --font-weight-body: 400;
+    --font-weight-buttons: 600;
+    --font-family-special: 'silkscreen';
+    --font-family-main: 'lato', sans-serif;
+    --font-size-headings: 40px;
+    --font-size-body: 20px;
+    --larger-scale: 1.1;
+    --transition-duration: 0.3s;
+    --svg-animation-duration: 5s;
+}
+
+body {
+    font-family: var(--font-family-main); 
+    font-weight: var(--font-weight-body);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+    background-color: var(--primary-color); /* tetradic complementary colors to #81bd81 (green): #819fbd (blue) #bd81bd (purple) #bd9f81 (tan) */
+    margin: 0 0 40px 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* page header with logo and navigation menu */
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    flex-flow: row nowrap;
+}
+
+.page-header__item {
+    flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: flex-end;
+}
+
+.logo {
+    width: 10vw;
+    height: auto;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.navigation-menu {
+    position: fixed;
+    top: 0;
+    right: 10px;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+.navigation-list__item {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.navigation-list__item--active {
+    font-family: var(--font-family-special);
+    font-weight: var(--font-weight-headings);
+    text-decoration: none;
+}
+
+/* transition for hover state of navigation menu items */
+.navigation-list__item:hover {
+    transition: all var(--transition-duration);
+    transform: scale(var(--larger-scale));
+}
+
+/* profile on home page with portrait, welcome message, and short intro */
+.profile {
+    display: flex;
+    min-width: 70vw;
+    max-width: 75vw;
+    height: 100%;
+    margin: auto;
+    width: 30%;
+    justify-content: flex-start;
+    align-items: space-around;
+    flex: 1 1 auto;
+    flex-flow: column wrap;
+}
+
+.profile__portrait {
+    width: 25vw;
+    height: auto;
+    margin: auto;
+    float: left;
+    border-radius: 30%;
+    border: 5px solid var(--black);
+}
+
+/* transition for hover state of profile portrait and heading */
+.profile__portrait:hover {
+    transition: all var(--transition-duration) ease-in-out;
+    transform: scale(var(--larger-scale));
+}
+
+.profile__heading:hover {
+    transition: all var(--transition-duration);
+    transform: scale(var(--larger-scale));
+}
+
+.profile__item {
+    margin: 0 30px;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+/* styling for headings */
+h1 {
+    font-size: var(--font-size-headings);
+    font-weight: var(--font-weight-headings);
+}
+
+h2 {
+    font-size: var(--font-size-headings);
+    font-weight: var(--font-weight-headings);
+}
+
+h3 {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-headings);
+}
+
+.heading {
+    font-family: var(--font-family-special); /*all headers with class="heading" in silkscreen font */
+}
+
+/* main section on about me page */
+main {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 50vw;
+    margin: 0 25vw;
+}
+
+.interests {
+    list-style-type: none;
+}
+
+.interests__item {
+    display: inline-block;
+    margin: 0 5vw;
+}
+
+
+/* animation of des moines, ia svg */
+svg * {
+    transform-box: fill-box;
+}
+
+.sun {
+    animation: var(--svg-animation-duration) sun-color-change infinite alternate linear;
+}
+
+@keyframes sun-color-change {
+    from {
+        fill: var(--sun-color);
+    }
+    to {
+        fill: var(--moon-color);
+    }
+}
+
+.stars {
+    animation: var(--svg-animation-duration) stars-color-change infinite alternate;
+}
+
+@keyframes stars-color-change {
+    from {
+        fill: var(--daytime-color);
+    }
+    to {
+        fill: var(--nighttime-color);
+    }
+}
+
+.bubbles {
+    animation: var(--svg-animation-duration) bubbles-color-change infinite alternate;
+}
+
+@keyframes bubbles-color-change {
+    from {
+        fill: var(--daytime-color);
+    }
+    to {
+        fill: var(--nighttime-color);
+    }
+}
+
+.backgroundcolor-dsm-image {
+    animation: var(--svg-animation-duration) background-color-change infinite alternate;
+}
+
+@keyframes background-color-change {
+    from {
+        fill: var(--day-sky-color);
+    }   
+    to {
+        fill: var(--night-sky-color);
+    } 
+}
+
+.dsm {
+    animation: var(--svg-animation-duration) dsm-color-change infinite alternate;
+}
+
+@keyframes dsm-color-change {
+    from {
+        fill: var(--daytime-color);
+    }
+    to {
+        fill: var(--nighttime-color);
+    }    
+}
+
+.trees {
+    animation: 60s trees-color-change infinite normal;
+}
+
+@keyframes trees-color-change {
+    0% {
+        fill: var(--spring-leaves);
+    }    
+    25% {
+        fill: var(--summer-leaves);
+    }
+    50% {
+        fill: var(--autumn-leaves);
+    }
+    100% {
+        fill: var(--winter-leaves);
+    }
+}
+
+.car1 {
+    animation: var(--svg-animation-duration) car1-move infinite normal linear;
+}
+
+@keyframes car1-move {
+    from {
+        transform: translate(auto, auto)
+    }
+    to {
+        transform: translate(-5000px, 0);
+    }
+}
+
+.car2 {
+    animation: var(--svg-animation-duration) car2-move infinite normal ease-in-out;
+}
+
+@keyframes car2-move {
+    from {
+        transform: translate(auto, auto)
+    }
+    to {
+        transform: translate(10000px, 0);
+    }
+}
+
+.car3 {
+    animation: var(--svg-animation-duration) car3-move infinite normal linear;
+}
+
+@keyframes car3-move {
+    from {
+        transform: translate(auto, auto)
+    }
+    to {
+        transform: translate(8000px, 0);
+    }
+}
+
+.car4 {
+    animation: var(--svg-animation-duration) car4-move infinite normal ease-in;
+}
+
+@keyframes car4-move {
+    from {
+        transform: translate(auto, auto)
+    }
+    to {
+        transform: translate(12000px, 0);
+    }
+}
+
+.clouds {
+    animation: var(--svg-animation-duration) clouds-color-change infinite alternate;
+}
+
+@keyframes clouds-color-change {
+    from {
+        fill: var(--daytime-color);
+    }
+    to {
+        fill: var(--nighttime-color);
+    }
+}
+
+.planes {
+    animation: var(--svg-animation-duration) planes-move infinite ease-in-out;
+}
+
+@keyframes planes-move {
+    from {
+        transform: translate(auto, auto);
+    }
+    to {
+        transform: translate(10000px, 0);
+    }
+}
+
+/* styling of anchor tags */
+a {
+    color: var(--original-a-color);
+}
+
+a:visited {
+    color: var(--visited-a-color);
+}
+
+a:hover a:focus {
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--active-a-color);
+}
+
+/* styling of buttons */
+button,
+.button1 {
+    border: none;
+    font-family: var(--font-family-main);
+    background-color: var(--button-color);
+    color: var(--black);
+    text-decoration: none;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-buttons);
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid var(--transparent-black);
+    transition-duration: var(--transition-duration);
+    transition-property: opacity;
+}
+
+button:hover, button:focus,
+.button1:hover, .button1:focus {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/* contact page */
+.contact-page {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.contact-page__item {
+    align-self: center;
+    justify-content: center;
+}
+
+.contact-me {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+  
+/* work page */
+.work-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+/* start grid fallback */
+.grid__item {
+    display: inline-block;
+    width: 33%;
+} 
+/*end grid fallback */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin: 10px 30px 60px;
+}
+
+.grid__item {
+    width: auto;
+    background-color: var(--grid__item-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+}
+
+/* footer with links to socials */
+footer {
+    font-family: var(--font-family-special);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-headings);
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+}
+
+.page-footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-footer__item {
+    padding: 0 2px;
+}
+
+.page-footer__svg:hover {
+    transition: all var(--transition-duration);
+    transform: scale(var(--larger-scale));
+}
+
+/* media query for screens smaller than 500px */
+@media all and (max-width: 500px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* media query for screens larger than 500px and smaller than 750px */
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*media query for screens smaller than 750px */
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h2 {
+        font-size: var(--font-size-body);
+    }
+}

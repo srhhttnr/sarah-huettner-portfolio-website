@@ -1,0 +1,765 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* declarations for native color variables, font variables, etc */
+
+body {
+    font-family: 'lato', sans-serif; 
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    background-color: #81bd81; /* tetradic complementary colors to #81bd81 (green): #819fbd (blue) #bd81bd (purple) #bd9f81 (tan) */
+    margin: 0 0 40px 10px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* page header with logo and navigation menu */
+.page-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+}
+
+.page-header__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 200px;
+            flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: flex-end;
+}
+
+.logo {
+    width: 10vw;
+    height: auto;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.navigation-menu {
+    position: fixed;
+    top: 0;
+    right: 10px;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+.navigation-list__item {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.navigation-list__item--active {
+    font-family: 'silkscreen';
+    font-weight: 900;
+    text-decoration: none;
+}
+
+/* transition for hover state of navigation menu items */
+.navigation-list__item:hover {
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+/* profile on home page with portrait, welcome message, and short intro */
+.profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 70vw;
+    max-width: 75vw;
+    height: 100%;
+    margin: auto;
+    width: 30%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+}
+
+.profile__portrait {
+    width: 25vw;
+    height: auto;
+    margin: auto;
+    float: left;
+    border-radius: 30%;
+    border: 5px solid #000;
+}
+
+/* transition for hover state of profile portrait and heading */
+.profile__portrait:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.profile__heading:hover {
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.profile__item {
+    margin: 0 30px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+}
+
+/* styling for headings */
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.heading {
+    font-family: 'silkscreen'; /*all headers with class="heading" in silkscreen font */
+}
+
+/* main section on about me page */
+main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 50vw;
+    margin: 0 25vw;
+}
+
+.interests {
+    list-style-type: none;
+}
+
+.interests__item {
+    display: inline-block;
+    margin: 0 5vw;
+}
+
+
+/* animation of des moines, ia svg */
+svg * {
+    transform-box: fill-box;
+}
+
+.sun {
+    -webkit-animation: 5s sun-color-change infinite alternate linear;
+            animation: 5s sun-color-change infinite alternate linear;
+}
+
+@-webkit-keyframes sun-color-change {
+    from {
+        fill: #f1c647;
+    }
+    to {
+        fill: #e7e7e7;
+    }
+}
+
+@keyframes sun-color-change {
+    from {
+        fill: #f1c647;
+    }
+    to {
+        fill: #e7e7e7;
+    }
+}
+
+.stars {
+    -webkit-animation: 5s stars-color-change infinite alternate;
+            animation: 5s stars-color-change infinite alternate;
+}
+
+@-webkit-keyframes stars-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }
+}
+
+@keyframes stars-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }
+}
+
+.bubbles {
+    -webkit-animation: 5s bubbles-color-change infinite alternate;
+            animation: 5s bubbles-color-change infinite alternate;
+}
+
+@-webkit-keyframes bubbles-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }
+}
+
+@keyframes bubbles-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }
+}
+
+.backgroundcolor-dsm-image {
+    -webkit-animation: 5s background-color-change infinite alternate;
+            animation: 5s background-color-change infinite alternate;
+}
+
+@-webkit-keyframes background-color-change {
+    from {
+        fill: #c3eef9;
+    }   
+    to {
+        fill: #232338;
+    } 
+}
+
+@keyframes background-color-change {
+    from {
+        fill: #c3eef9;
+    }   
+    to {
+        fill: #232338;
+    } 
+}
+
+.dsm {
+    -webkit-animation: 5s dsm-color-change infinite alternate;
+            animation: 5s dsm-color-change infinite alternate;
+}
+
+@-webkit-keyframes dsm-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }    
+}
+
+@keyframes dsm-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }    
+}
+
+.trees {
+    -webkit-animation: 60s trees-color-change infinite normal;
+            animation: 60s trees-color-change infinite normal;
+}
+
+@-webkit-keyframes trees-color-change {
+    0% {
+        fill: #b7e68e;
+    }    
+    25% {
+        fill: #6ca833;
+    }
+    50% {
+        fill: #c75050;
+    }
+    100% {
+        fill: #ffffff;
+    }
+}
+
+@keyframes trees-color-change {
+    0% {
+        fill: #b7e68e;
+    }    
+    25% {
+        fill: #6ca833;
+    }
+    50% {
+        fill: #c75050;
+    }
+    100% {
+        fill: #ffffff;
+    }
+}
+
+.car1 {
+    -webkit-animation: 5s car1-move infinite normal linear;
+            animation: 5s car1-move infinite normal linear;
+}
+
+@-webkit-keyframes car1-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(-5000px, 0);
+                transform: translate(-5000px, 0);
+    }
+}
+
+@keyframes car1-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(-5000px, 0);
+                transform: translate(-5000px, 0);
+    }
+}
+
+.car2 {
+    -webkit-animation: 5s car2-move infinite normal ease-in-out;
+            animation: 5s car2-move infinite normal ease-in-out;
+}
+
+@-webkit-keyframes car2-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(10000px, 0);
+                transform: translate(10000px, 0);
+    }
+}
+
+@keyframes car2-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(10000px, 0);
+                transform: translate(10000px, 0);
+    }
+}
+
+.car3 {
+    -webkit-animation: 5s car3-move infinite normal linear;
+            animation: 5s car3-move infinite normal linear;
+}
+
+@-webkit-keyframes car3-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(8000px, 0);
+                transform: translate(8000px, 0);
+    }
+}
+
+@keyframes car3-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(8000px, 0);
+                transform: translate(8000px, 0);
+    }
+}
+
+.car4 {
+    -webkit-animation: 5s car4-move infinite normal ease-in;
+            animation: 5s car4-move infinite normal ease-in;
+}
+
+@-webkit-keyframes car4-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(12000px, 0);
+                transform: translate(12000px, 0);
+    }
+}
+
+@keyframes car4-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto)
+    }
+    to {
+        -webkit-transform: translate(12000px, 0);
+                transform: translate(12000px, 0);
+    }
+}
+
+.clouds {
+    -webkit-animation: 5s clouds-color-change infinite alternate;
+            animation: 5s clouds-color-change infinite alternate;
+}
+
+@-webkit-keyframes clouds-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }
+}
+
+@keyframes clouds-color-change {
+    from {
+        fill: #393536;
+    }
+    to {
+        fill: #ffffff;
+    }
+}
+
+.planes {
+    -webkit-animation: 5s planes-move infinite ease-in-out;
+            animation: 5s planes-move infinite ease-in-out;
+}
+
+@-webkit-keyframes planes-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto);
+    }
+    to {
+        -webkit-transform: translate(10000px, 0);
+                transform: translate(10000px, 0);
+    }
+}
+
+@keyframes planes-move {
+    from {
+        -webkit-transform: translate(auto, auto);
+                transform: translate(auto, auto);
+    }
+    to {
+        -webkit-transform: translate(10000px, 0);
+                transform: translate(10000px, 0);
+    }
+}
+
+/* styling of anchor tags */
+a {
+    color: #00476a;
+}
+
+a:visited {
+    color: #41415f;
+}
+
+a:hover a:focus {
+    text-decoration: none;
+}
+
+a:active {
+    color: #344c34;
+}
+
+/* styling of buttons */
+button {
+    border: none;
+    font-family: 'lato', sans-serif;
+    background-color: #bd81bd;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    -webkit-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+}
+.button1 {
+    border: none;
+    font-family: 'lato', sans-serif;
+    background-color: #bd81bd;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    -webkit-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+}
+
+button:hover, button:focus,
+.button1:hover, .button1:focus {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/* contact page */
+.contact-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+}
+
+.contact-page__item {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.contact-me {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+}
+  
+/* work page */
+.work-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+}
+
+/* start grid fallback */
+.grid__item {
+    display: inline-block;
+    width: 33%;
+} 
+/*end grid fallback */
+
+.grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 20px 2fr 20px 2fr;
+    grid-template-columns: repeat(3, 2fr);
+    -ms-grid-rows: 1fr 20px 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 10px 30px 60px;
+}
+
+.grid > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.grid > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.grid > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+}
+
+.grid > *:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+}
+
+.grid > *:nth-child(5) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+}
+
+.grid > *:nth-child(6) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+}
+
+.grid__item {
+    width: auto;
+    background-color: #d1bca7;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid__item:last-child {
+    -ms-grid-column: 3;
+    grid-column: 3 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+}
+
+/* footer with links to socials */
+footer {
+    font-family: 'silkscreen';
+    font-size: 20px;
+    font-weight: 900;
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+}
+
+.page-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.page-footer__item {
+    padding: 0 2px;
+}
+
+.page-footer__svg:hover {
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+/* media query for screens smaller than 500px */
+@media all and (max-width: 500px) {
+    .grid {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* media query for screens larger than 500px and smaller than 750px */
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*media query for screens smaller than 750px */
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h2 {
+        font-size: 20px;
+    }
+}
