@@ -99,7 +99,7 @@
     let messageTextArea = document.querySelector('.message-text-area');
 
     messageTextArea.addEventListener('click', function() {
-        messageTextArea = '';
+        messageTextArea = (`<textarea> </textarea`);
     })
   
     // THE RETURN STATEMENT HERE
