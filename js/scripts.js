@@ -48,11 +48,6 @@
     function validateName() {
       let value = nameInput.value;
   
-      if (!value) {
-        showErrorMessage(nameInput, 'Name is a required field.');
-        return false;
-      }
-  
       if (value.length === 0) {
         showErrorMessage(nameInput, 'Name is a required field.');
         return false;
@@ -63,7 +58,7 @@
     }
 
     function validateMessage() {
-        let value = userMessage;
+        let value = userMessage.value;
 
         if (!value) {
             showErrorMessage(userMessage, 'Message is a required field.');
