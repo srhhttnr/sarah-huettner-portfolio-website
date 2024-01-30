@@ -95,6 +95,17 @@
     nameInput.addEventListener('input', validateName);
     messageInput.addEventListener('input', validateMessage);
   
+
+    let messageTextArea = document.querySelector('.message-text-area');
+
+    messageTextArea.addEventListener('click', function() {
+        messageTextArea = '';
+    })
   
     // THE RETURN STATEMENT HERE
+    return {
+        validateEmail : validateEmail,
+        validateName : validateName,
+        validateMessage : validateMessage,
+    }
   })();
