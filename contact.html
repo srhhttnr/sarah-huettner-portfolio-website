@@ -50,15 +50,15 @@
 
     <div class="contact-me">
         <h2 class="heading contact-me__item">Contact Me</h2>
-        <form id="contact-me-form contact-me__item" action="/contact-me-form" method="post">
-            <label for="user-name" class="standard-label">Name: </label>
+        <form class="contact-me-form contact-me__item" method="post">
+            <label for="user-name" class="user-name">Name: </label>
             <input type="text" id="user-name" name="user-name" required><br>
-            <label for="user-email" class="standard-label">Email: </label>
+            <label for="user-email" class="user-email">Email: </label>
             <input type="text" id="user-email" name="user-email" required><br>
-            <label for="user-message" class="standard-label">Message: </label><br>
-            <textarea id="user-message" name="user-message" cols="26" rows="5" maxlength="500"
+            <label for="user-message" class="user-message">Message: </label><br>
+            <textarea class="message-text-area" id="user-message" name="user-message" cols="26" rows="5" maxlength="500"
                 required>start typing here</textarea><br>
-            <button type="submit" value="send message">Send Message</button>
+            <button type="submit" value="send message" class="submit-button">Send Message</button>
         </form>
     </div>
 
@@ -73,6 +73,7 @@
     </footer>
 
     <div>
+        <script src="js/scripts.js"></script>
         <script src="js/tota11y.min.js"></script>
     </div>
 
